@@ -10,9 +10,11 @@ import java.net.URL
 
 class ShowImage {
 
-    fun showImage(context: Context, url: String, imageview: ImageView,placeholder:Int) {
+    fun showImage(context: Context, url: String, imageview: ImageView,placeholders:Int) {
 
-        imageview.setImageResource(placeholder)
+
+
+        imageview.setImageResource(placeholders)
         imageview.tag = url
 
         val cachedBitmap = ImageCache.get(url)
@@ -40,7 +42,8 @@ class ShowImage {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     if (imageview.tag == url) {
-                        imageview.setImageResource(placeholder)
+
+                        imageview.setImageResource(placeholders)
                     }
                 }
             }
