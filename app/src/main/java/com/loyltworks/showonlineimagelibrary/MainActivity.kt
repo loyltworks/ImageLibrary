@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ShowImage().showImage(this,"https://dummyimage.com/300.png/09f/fff",binding.image)
+        ShowImage().showImage(this,"https://dummyimage.com/300.png/09f/fff",binding.image,
+            com.loyltworks.showimage.R.drawable.user)
     }
 }
