@@ -8,18 +8,20 @@ import java.net.URL
 
 class ShowImage {
 
-        fun showImage(context: Context, url: String, imageview: ImageView) {
+    fun showImage(context: Context, url: String, imageview: ImageView) {
+        imageview.setImageResource(R.drawable.user)
+        imageview.tag = url
 
-        imageview.tag=url
+
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 val inputStream = URL(url).openStream()
                 val bitmap = BitmapFactory.decodeStream(inputStream)
-                 withContext(Dispatchers.Main) {
-                     if (imageview.tag == url) {
-                         imageview.setImageBitmap(bitmap)
-                     }
+                withContext(Dispatchers.Main) {
+                    if (imageview.tag == url) {
+                        imageview.setImageBitmap(bitmap)
+                    }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
