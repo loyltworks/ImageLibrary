@@ -40,7 +40,7 @@ class ShowImage {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     if (imageview.tag == url) {
-                        imageview.setImageResource(R.drawable.user)
+                        imageview.setImageResource(placeholder)
                     }
                 }
             }
